@@ -37,6 +37,10 @@ import Social from './Social.astro';
 
 <style lang="less">
 
+    .section--contacts {
+        padding-block-end: 1.5rem;
+    }
+
     .innerWrapper--contacts {
         display: flex;
         flex-wrap: wrap;
@@ -44,6 +48,7 @@ import Social from './Social.astro';
 
         .section__title {
             margin-block-end: 9rem;
+            order: 1;
             text-align: center;
             width: 100%; 
         }
@@ -53,13 +58,17 @@ import Social from './Social.astro';
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+        order: 3;
+        text-align: center;
+        width: 100%;
 
         a {
-            align-self: flex-start;
+            align-self: center
         }
     }
 
     .name {
+        display: none;
         font-size: 2.3rem;
     }
 
@@ -68,8 +77,10 @@ import Social from './Social.astro';
     }
 
     .contact-form {
-        text-align: end;
-        width: 50%;
+        margin-block-end: 6rem;
+        order: 2;
+        text-align: center;
+        width: 100%;
 
         .input-group {
             display: -webkit-box;

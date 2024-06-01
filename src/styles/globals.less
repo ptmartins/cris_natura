@@ -153,7 +153,8 @@ input:-webkit-autofill:active {
 
 .section {
     min-height: 50vh;
-    padding: 9rem;
+    padding-block: 9rem;
+    padding-inline: 1.5rem;
     overflow: hidden;
 }
 
@@ -173,10 +174,21 @@ h1,
 
 @media only screen and (min-width: 768px) {
 
-
+    .section {
+        padding-inline: 3rem;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
 
+    .section {
+        padding-inline: 6rem;
+    }
+}
 
+@media only screen and (min-width: 1440px) {
+    
+    .section {
+        padding-inline: 9rem;
+    }
 }

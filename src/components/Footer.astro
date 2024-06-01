@@ -9,7 +9,9 @@ const year = date.getFullYear();
         </div>
         <div class="footer__bottom">
             <div class="copyright">
-                &copy; { year } - Cristina Gonçalves | Naturopatia
+                <span> &copy; { year } - Cristina Gonçalves </span>
+                <span class="copyright__pipe"> | </span>
+                <span> Naturopatia </span>
             </div>
             <div class="developedBy">
                 Developed by <a href="https://pedromartins.com.pt" class="u-link" target="_blank"> Pedro Martins </a>
@@ -25,10 +27,38 @@ const year = date.getFullYear();
     }
 
 
-    .footer__bottom {
-        display: flex;
-        justify-content: space-between; 
-        margin-block-start: 1.5rem;
+    .footer__bottom,
+    .copyright {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-block: 1.5rem;
+        text-align: center;
+
+        &__pipe {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 640px) {
+    
+        .copyright {
+            display: flex;
+            gap: .375rem;
+            justify-content: center;
+
+            &__pipe {
+                display: inline;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+    
+        .footer__bottom {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
 </style>
