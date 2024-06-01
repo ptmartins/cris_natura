@@ -9,7 +9,7 @@ const currentPath = pathname.slice(1);
 <header class="header">
     <div class="innerWrapper innerWrapper--header">
         <a href="/" class="logo">
-            <Image src={ Logo } alt="Luisa Gonçalves" width="500"/>
+            <Image src={ Logo } alt="Luisa Gonçalves" width="500" class="logo__image"/>
         </a>
         <nav class="nav">
             <a href="/" class={`nav__link ${currentPath === '' ? 'active' : ''}`}>Home</a>
@@ -37,13 +37,13 @@ const currentPath = pathname.slice(1);
         }
     }
 
+    .logo__image {
+        width: 320px 
+    }
+
     .nav {
-        align-items: center;
+
         display: none;
-        display: flex;
-        font-size: 1.7rem;
-        gap: 1.5rem;
-        text-transform: uppercase;
     }
 
     .nav__link {
@@ -58,6 +58,20 @@ const currentPath = pathname.slice(1);
                 border-top: 4px solid var(--font-color)
             }
         }
+    }
+
+
+    @media only screen and (min-width: 768px) {
+    
+        .nav {
+            align-items: center;
+            display: none;
+            display: flex;
+            font-size: 1.7rem;
+            gap: 1.5rem;
+            text-transform: uppercase;
+        }
+
     }
 
 </style>

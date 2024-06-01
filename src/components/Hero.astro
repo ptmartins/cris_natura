@@ -9,7 +9,7 @@ import heroGraphics from '../images/hero_graphics_1.svg';
     <div class="innerWrapper innerWrapper--hero">
         <div class="hero__content">
             <h2 class="hero__title">A saúde é essencial para uma vida plena de felicidade.</h2>
-            <a href="#book" class="btn btn--main btn--icon">Venha experimentar  <Icon name="mdi:chevron-right" /> </a>
+            <a href="#contacts" class="btn btn--main btn--icon">Saiba mais  <Icon name="mdi:chevron-right" /> </a>
         </div>
     </div>
     <Image src={ heroGraphics } alt="A bird sitting on a nest of eggs." class="hero__graphics1" width={heroGraphics.width / 1.5} />
@@ -19,33 +19,34 @@ import heroGraphics from '../images/hero_graphics_1.svg';
 
     .section--hero {
         overflow: hidden;
-        padding: 3rem;
+        padding-block: 1.5rem;
         position: relative;
     }
 
     .innerWrapper--hero {
-        height: calc(100vh - 80px - 6rem);
+        height: calc(100vh - 145px - 3rem);
         position: relative;
     }
 
     .hero__content {
-        inset-block-start: 50%;
+        inset-block-start: 30%;
         position: absolute;
         transform: translateY(-50%);
-        width: 85%;
     }
 
     .hero__title {
-        font-size: 5rem;
+        font-size: 2.3rem;
         font-style: italic;
         font-weight: 400;
         margin-block-end: 4.5rem;
     }
 
     .hero__graphics1 {
-        position: absolute;
+        height: 90vw;
         inset-block-end: -0.5rem;
         inset-inline-end: -1.5rem;
+        position: absolute;
+        width: 90vw;
     }
 
 </style>

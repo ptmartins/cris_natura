@@ -47,7 +47,7 @@ import Social from './Social.astro';
         justify-content: space-between;
 
         .section__title {
-            margin-block-end: 9rem;
+            margin-block-end: 5rem;
             order: 1;
             text-align: center;
             width: 100%; 
@@ -63,7 +63,7 @@ import Social from './Social.astro';
         width: 100%;
 
         a {
-            align-self: center
+            align-self: center;
         }
     }
 
@@ -118,4 +118,35 @@ import Social from './Social.astro';
         text-align: center;
     }
 
+
+    @media only screen and (min-width: 992px) {
+
+        .section--contacts {
+            padding-block-end: 9rem;
+
+        }
+
+        .innerWrapper--contacts {
+            .section__title {
+                text-align: start;
+            }
+        }
+
+        .contacts {
+            order: 2;
+            text-align: start;
+            width: 40%;
+
+            a {
+                align-self: flex-start;
+            }
+        }
+
+        .contact-form {
+            margin: 0;
+            order: 3;
+            text-align: end;
+            width: 55%;
+        }
+    }
 </style>
