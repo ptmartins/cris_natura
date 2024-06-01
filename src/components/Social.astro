@@ -1,0 +1,56 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class="hero__social">
+    <a href="https://www.facebook.com/pedro.martins.3114935" class="social__link" target="_blank" aria-label="Facebook link">
+        <Icon name="fa6-brands:facebook-f" />
+    </a>
+    <a href="https://twitter.com/snitramordep" class="social__link" target="_blank" aria-label="Twitter link">
+        <Icon name="fa6-brands:twitter" />
+    </a>
+    <a href="https://www.instagram.com/ptmartins/" class="social__link" target="_blank" aria-label="Instagram link">
+        <Icon name="fa6-brands:instagram" />
+    </a>
+    <a href="https://www.linkedin.com/in/pedro-martins-ba5b9618" class="social__link" target="_blank" aria-label="Linkedin link">
+        <Icon name="fa6-brands:linkedin" />
+    </a>
+</div>
+
+<style lang="less">
+
+    .hero__social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .75rem;
+        justify-content: center;
+    }
+
+    .social__link {
+        align-items: center;
+        color: var(--font-color);
+        display: flex;
+        font-size: 2rem; 
+        height: 48px;
+        justify-content: center;
+        transition: var(--default-transition);
+        width: 48px;
+
+        &:hover {
+            transform: scale(1.5);
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 992px) {
+        
+        .hero__social {
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+    }
+
+</style>

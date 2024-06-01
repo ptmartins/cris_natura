@@ -1,0 +1,46 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+import '../styles/globals.less';
+
+const { title } = Astro.props; 
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title> { title} </title>
+	</head>
+	<body>
+
+        <Header />
+
+        <main class="main">
+            <slot />
+        </main>
+
+        <Footer />
+	</body>
+</html>
+
+<style lang="less">
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans Georgian', Arial, san;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+.main {
+    flex-grow: 1;
+}
+</style>

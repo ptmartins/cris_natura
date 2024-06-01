@@ -1,0 +1,44 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import { fetchEntryBySlug, fetchAllSlugs } from '../../lib/contentful';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+
+export async function getStaticPaths() {
+  const slugs = await fetchAllSlugs();
+  return slugs.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const post = await fetchEntryBySlug(slug);
+
+if (!post) {
+  throw new Error(`Post with slug ${slug} not found`);
+}
+
+const title = post.fields.title;
+const date = new Date(post.fields.date).toLocaleDateString();
+const description = post.fields.description;
+const content = documentToHtmlString(post.fields.content);
+const imageUrl = post.fields.poster?.fields?.file?.url;
+const imageAlt = post.fields.poster?.fields?.title;
+---
+
+<MainLayout title={ slug }> 
+    <section class="section section--blog">
+        <div class="innerWrapper">
+            <article>
+                <Image src={`https:${ imageUrl }`} alt={ imageAlt } width="800" height="500" class="poster" />
+                <h1 class="title">{ title }</h1>
+                <p class="date">{ date }</p>
+                <div class="description">
+                  { description }
+                </div>  
+                <div set:html={ content } class="content">
+                </div>
+            </article>
+             <a href="/blog">Back to Blog</a>
+        </div>  
+    </section>  
+  </body>
+</html>

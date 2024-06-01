@@ -1,0 +1,23 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^16.5.2",
+    "@iconify-json/fa6-brands": "^1.1.19",
+    "@iconify-json/mdi": "^1.1.66",
+    "astro": "^4.9.2",
+    "astro-icon": "^1.1.0",
+    "contentful": "^10.11.7"
+  },
+  "devDependencies": {
+    "less": "^4.2.0"
+  }
+}

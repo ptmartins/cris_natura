@@ -1,0 +1,110 @@
+---
+import Social from './Social.astro';
+---
+
+<section id="contacts" class="section section--contacts">
+    <div class="innerWrapper innerWrapper--contacts">
+        <h2 class="section__title">
+            Entre em contacto
+        </h2>
+        <div class="contacts">
+            <h4 class="name">Cristina Goncalves</h4>
+            <a href="tel:+351968953963" class="phone">+351 968 953 963</a>
+            <a href="mai:lcristinagoncalves@gmail.com" class="email">lcristinagoncalves@gmail.com</a>
+            <Social />
+        </div>
+        <form class="contact-form" action="https://formspree.io/xdodjyea" method="POST">
+            <div class="input-group">
+                <input type="text" name="name" class="u-input" placeholder="name" />
+                <input type="email" name="email" class="u-input" placeholder="email" />
+                <input type="text" name="phone" class="u-input" placeholder="phone number" />
+            </div>
+            <div class="input-group">
+                <textarea
+                    name="message"
+                    id="message"
+                    class="u-textarea"
+                    cols="30"
+                    rows="10"
+                    placeholder="message"
+                ></textarea>
+            </div>
+            <input type="hidden" name="_next" value="https://ptmartins.github.io/thanks.html" />
+            <button type="submit" class="btn btn--main" value="Submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+<style lang="less">
+
+    .innerWrapper--contacts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .section__title {
+            margin-block-end: 9rem;
+            text-align: center;
+            width: 100%; 
+        }
+    }
+
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        a {
+            align-self: flex-start;
+        }
+    }
+
+    .name {
+        font-size: 2.3rem;
+    }
+
+    .email {
+        margin-block-end: auto;
+    }
+
+    .contact-form {
+        text-align: end;
+        width: 50%;
+
+        .input-group {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            margin-bottom: 2.5rem;
+        }
+
+        .u-input {
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            margin: 0 0 2rem 0;
+        }
+
+        .u-input:last-child {
+            margin-right: 0;
+        }
+
+        .u-textarea {
+            width: 100%;
+        }
+
+        .btn--main {
+           
+        }
+    }
+
+    .contacts-text {
+        margin-bottom: 6.2rem;
+        text-align: center;
+    }
+
+</style>

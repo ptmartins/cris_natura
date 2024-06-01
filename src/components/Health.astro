@@ -1,0 +1,175 @@
+---
+import { Image } from 'astro:assets';
+import Insomnia from '../images/insomnia.png';
+import Alergies from '../images/alergies.png';
+import BackPain from '../images/back-pain.png';
+import Cholesterol from '../images/cholesterol.png';
+import Fatigue from '../images/fatigue.png';
+import Memory from '../images/memory.png';
+import Obesity from '../images/obesity.png';
+import Stress from '../images/stress.png';
+import Anxiety from '../images/anxiety.png';  
+---
+
+<section class="section section--health">
+    <div class="innerWrapper">
+        <h2 class="section__title">Naturopatia</h2>
+        <h4 class="section__subTitle">O que é e como pode ajudar</h4>
+        <div class="content">
+            <p>A característica principal da Naturopatia, é uma abordagem holística e natural que tem como base o princípio da homeostasia, isto é, o corpo possuí uma capacidade inata de auto-equilíbrio.</p>
+            <p>O Naturopata avalia o estado geral da saúde das pessoas através de processos naturais e utilizando várias técnicas de diagnóstico específicas.</p>
+            <p>A Naturopatia inclui as áreas da Homeopatia, Fitoterapia, Redução Alimentar, Hidroterapia e Oligoterapia.</p>
+        </div>
+        <ul class="conditions">
+            <li class="condition">
+                <div class="condition__header">
+                    <div class="condition__icon">
+                        <Image src={Insomnia} alt="" width="60" height="60"/>
+                    </div>
+                </div>
+                <div class="condition__body">
+                    <div class="condition__title"> Insónia </div>
+                </div>
+            </li>
+            <li class="condition">
+                <div class="condition__header">
+                    <div class="condition__icon">
+                        <Image src={ Alergies } alt="" width="60" height="60"/>
+                    </div>
+                </div>
+                <div class="condition__body">
+                    <div class="condition__title"> Alergias </div>
+                </div>
+            </li>
+            <li class="condition">
+                <div class="condition__header">
+                    <div class="condition__icon">
+                        <Image src={ Obesity } alt="" width="60" height="60"/>
+                    </div>
+                </div>
+                <div class="condition__body">
+                    <div class="condition__title"> Obesidade </div>
+                </div>
+            </li>
+            <li class="condition">
+                <div class="condition__header">
+                    <div class="condition__icon">
+                        <Image src={ Fatigue } alt="" width="60" height="60"/>
+                    </div>
+                </div>
+                <div class="condition__body">
+                    <div class="condition__title"> Fadiga crónica </div>
+                </div>
+            </li>
+            <li class="condition">
+                <div class="condition__header">
+                    <div class="condition__icon">
+                        <Image src={ Anxiety } alt="" width="60" height="60"/>
+                    </div>
+                </div>
+                <div class="condition__body">
+                    <div class="condition__title"> Ansiedade </div>
+                </div>
+            </li>
+            <li class="condition">
+                <div class="condition__header">
+                    <div class="condition__icon">
+                        <Image src={ BackPain } alt="" width="60" height="60"/>
+                    </div>
+                </div>
+                <div class="condition__body">
+                    <div class="condition__title"> Dores reumáticas </div>
+                </div>
+            </li>
+            <li class="condition">
+                <div class="condition__header">
+                    <div class="condition__icon">
+                        <Image src={ Memory } alt="" width="60" height="60"/>
+                    </div>
+                </div>
+                <div class="condition__body">
+                    <div class="condition__title"> Problemas de memória </div>
+                </div>
+            </li>
+            <li class="condition">
+                <div class="condition__header">
+                    <div class="condition__icon">
+                        <Image src={ Stress } alt="" width="60" height="60"/>
+                    </div>
+                </div>
+                <div class="condition__body">
+                    <div class="condition__title"> Stress </div>
+                </div>
+            </li>
+
+            <li class="condition">
+                <div class="condition__header">
+                    <div class="condition__icon">
+                        <Image src={ Cholesterol } alt="" width="60" height="60"/>
+                    </div>
+                </div>
+                <div class="condition__body">
+                    <div class="condition__title"> Colesterol </div>
+                </div>
+            </li>
+        </ul>
+
+
+    </div>
+</section>
+
+<style lang="less">
+
+    .section--health {
+        background-color: var(--secondary-color);
+        position: relative;
+    }
+
+    .conditions {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        margin-block-start: 6rem;
+        z-index: 10;
+    }
+
+    .condition {
+        background-color: var(--card-bg);
+        border-radius: var(--default-border-radius);
+        box-shadow: 0 1px 8px 1px rgba(0, 0, 0, .2);
+        padding: 1.5rem;
+    }
+
+    .condition__header,
+    .condition__body {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .condition__icon {
+        align-items: center;
+        background-color: var(--font-color);
+        border-radius: 50%;
+        display: flex;
+        height: 120px;
+        justify-content: center;
+        width: 120px;
+
+        img {
+            filter: invert(100);
+        }
+    }
+
+    .condition__body {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-block-start: 2rem;
+        text-transform: uppercase;
+    }
+
+    .condition__title {
+        text-align: center;
+    }
+
+</style>

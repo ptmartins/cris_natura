@@ -1,0 +1,101 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
+import { fetchEntries } from "../lib/contentful";
+
+const blogPosts = await fetchEntries();
+---
+
+<MainLayout title="Cristina Gonçalves - Blog"> 
+    <section class="section section--blog">
+        <div class="innerWrapper">
+            <h1 class="blog__title">Blog</h1>
+            <ul class="posts">
+                {blogPosts.map((post) => (
+                  <li key={ post.sys.id } class="post">
+                    <div class="post__thumb">
+                      <Image src={`https:${ post.fields.poster?.fields?.file?.url }`} alt="deded" width="300" height="180" class="thumb__image"/>
+                    </div>
+                    <div class="post__body">
+                      <div class="post__meta">
+                        { post.fields.category ? <span class={`tag tag--${post.fields.category.toLowerCase()}`}> {post.fields.category} </span> : <span class="tag tag--geral">Geral</span>}
+                        <span class="post__date">{new Date( post.fields.date ).toLocaleDateString('pt-PT', {
+                          dateStyle: 'long'
+                        })}</span>
+                      </div>
+                      <h2 class="post__title">
+                        <a href={`/posts/${ post.fields.slug }`}>{ post.fields.title }</a>
+                      </h2>
+                      <p class="post__description">{ post.fields.description }</p>
+                    </div>
+                  </li>
+                ))}
+            </ul>
+        </div>
+    </section>
+</MainLayout>
+
+<style lang="less">
+
+  .section--blog {
+    padding-block-start: 3rem
+  }
+
+  .blog__title {
+    font-size: ;
+  }
+
+  .posts {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+
+  .post {
+
+  }
+
+  .thumb__image {
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+  }
+
+  .post__meta {
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    padding-block: .75rem;
+  }
+
+  .tag {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .post__title {
+    font-size: 1.2rem;
+    margin-block-end: .75rem;
+    
+    a {
+      font-family: 'Noto Sans Georgian', Arial, san;
+      text-transform: uppercase;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .post__description {
+    font-size: 1rem;
+    font-weight: 300;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+
+</style>

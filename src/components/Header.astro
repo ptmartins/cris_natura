@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets';
+import Logo from '../images/logo.svg';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<header class="header">
+    <div class="innerWrapper innerWrapper--header">
+        <a href="/" class="logo">
+            <Image src={ Logo } alt="Luisa Gonçalves" width="500"/>
+        </a>
+        <nav class="nav">
+            <a href="/" class={`nav__link ${currentPath === '' ? 'active' : ''}`}>Home</a>
+            <a href="/#contacts" class={`nav__link ${currentPath === '#contacts' ? 'active' : ''}`}>Contacts</a>
+            <a href="/blog" class={`nav__link ${currentPath === 'blog' ? 'active' : ''}`}>Blog</a>
+        </nav>
+    </div>
+</header>
+
+<style lang="less">
+
+    .header {
+        background-color: var(--hero-bg);
+        padding: 1.5rem; 
+    }
+
+    .innerWrapper--header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo {
+        &::after {
+            display: none;
+        }
+    }
+
+    .nav {
+        align-items: center;
+        display: flex;
+        font-size: 1.7rem;
+        gap: 1.5rem;
+        text-transform: uppercase;
+    }
+
+    .nav__link {
+        &::after {
+            display: none;
+        }
+
+        &:hover,
+        &.active {
+            &::after {
+                display: block;
+                border-top: 4px solid var(--font-color)
+            }
+        }
+    }
+
+</style>
