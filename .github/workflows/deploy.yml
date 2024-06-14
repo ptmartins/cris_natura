@@ -1,0 +1,12 @@
+name: Scheduled Vercel Deploy
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel Deploy
+        run: curl -X POST ${{ secrets.VERCEL_HOOK_URL }}
