@@ -1,18 +1,17 @@
 ---
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
-import heroRight from '../images/hero-right.svg';
-import heroGraphics from '../images/hero_graphics_1.svg';
+import heroGraphics from '../images/hero1.svg';
 ---
 
 <section class="section section--hero">
     <div class="innerWrapper innerWrapper--hero">
         <div class="hero__content">
-            <h2 class="hero__title">A saúde é essencial para uma vida plena de felicidade.</h2>
+            <h2 class="hero__title">A <span>saúde</span> é essencial para uma vida plena de <span>felicidade</span>.</h2>
             <a href="#contacts" class="btn btn--main btn--icon">Saiba mais  <Icon name="mdi:chevron-right" /> </a>
         </div>
+        <Image src={ heroGraphics } alt="A bird sitting on a nest of eggs." class="hero__graphics1" width={heroGraphics.width / 1.5} />
     </div>
-    <Image src={ heroGraphics } alt="A bird sitting on a nest of eggs." class="hero__graphics1" width={heroGraphics.width / 1.5} />
 </section>
 
 <style lang="less"> 
@@ -39,37 +38,23 @@ import heroGraphics from '../images/hero_graphics_1.svg';
         font-style: italic;
         font-weight: 400;
         margin-block-end: 4.5rem;
+
+        span {
+            background-image: url('images/strikeout.svg');
+            background-position: -6% 107%;
+            background-repeat: no-repeat;
+            color: var(--accent);
+        }
     }
 
     .hero__graphics1 {
-        height: 90vw;
-        inset-block-end: -0.5rem;
-        inset-inline-end: -1.5rem;
+        height: 55%;
+        inset-block-end: 9rem;
+        inset-inline-end: 0;
         position: absolute;
-        width: 90vw;
-        z-index: -1;
+        width: 55%;
     }
 
-
-    @media only screen and (min-width: 992px) {
-
-.hero__content {
-    width: 65%;
-}
-
-.hero__title {
-    font-size: 4.3rem;
-}
-
-.hero__graphics1 {
-    height: 35vw;
-    inset-block-end: -0.5rem;
-    inset-inline-end: -1.5rem;
-    position: absolute;
-    width: 35vw;
-    z-index: -1;
-}
-}
 
     @media only screen and (min-width: 992px) {
 
@@ -80,15 +65,6 @@ import heroGraphics from '../images/hero_graphics_1.svg';
         .hero__title {
             font-size: 4.3rem;
         }
-    
-        .hero__graphics1 {
-            height: 35vw;
-            inset-block-end: -0.5rem;
-            inset-inline-end: -1.5rem;
-            position: absolute;
-            width: 35vw;
-            z-index: -1;
-        }
-    }
+    }   
 
 </style>

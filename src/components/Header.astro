@@ -8,41 +8,78 @@ const currentPath = pathname.slice(1);
 
 <header class="header">
     <div class="innerWrapper innerWrapper--header">
-        <a href="/" class="logo">
-            <Image src={ Logo } alt="Luisa Gonçalves" width="500" class="logo__image"/>
-        </a>
+        <div class="logotype">
+            <a href="/" class="logo">
+                <Image src={ Logo } alt="Luisa Gonçalves" width="500" class="logo__image"/>
+            </a>
+            <div class="txt">
+                <h4>Luisa Gonçalves</h4>
+                <p>Naturopata</p>
+            </div>
+        </div>
+
         <nav class="nav">
             <a href="/" class={`nav__link ${currentPath === '' ? 'active' : ''}`}>Home</a>
             <a href="/#contacts" class={`nav__link ${currentPath === '#contacts' ? 'active' : ''}`}>Contacts</a>
             <a href="/blog" class={`nav__link ${currentPath === 'blog' ? 'active' : ''}`}>Blog</a>
         </nav>
+
+        <button class="btn btn--main">Marcações</button>
     </div>
 </header>
 
 <style lang="less">
 
     .header {
-        background-color: var(--hero-bg);
         padding: 1.5rem; 
+
+        .btn--main {
+            align-self: center;    
+        }
     }
 
     .innerWrapper--header {
         display: flex;
+        gap: 3rem;
         justify-content: space-between;
     }
 
+    .logotype {
+        align-items: center;
+        display: flex;
+        gap: 1.5rem;
+
+        .txt {
+            font-style: italic;
+            
+            h4 {
+                font-size: 2.7rem;
+                margin-block-end: .1875rem;
+            }
+
+            p {
+                font-size: 1.3rem;
+                opacity: .8;
+            }
+        }
+    }
+
     .logo {
+        height: 160px;
+        width: 160px;
+
         &::after {
             display: none;
         }
     }
 
     .logo__image {
-        width: 320px 
+        height: 100%;
+        object-fit: contain;
+        width: 100%;
     }
 
     .nav {
-
         display: none;
     }
 
@@ -58,6 +95,10 @@ const currentPath = pathname.slice(1);
                 border-top: 4px solid var(--font-color)
             }
         }
+
+        &.active {
+            pointer-events: none;
+        }
     }
 
 
@@ -67,9 +108,9 @@ const currentPath = pathname.slice(1);
             align-items: center;
             display: none;
             display: flex;
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             gap: 1.5rem;
-            text-transform: uppercase;
+            margin-inline-start: auto;
         }
 
     }

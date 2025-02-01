@@ -16,10 +16,14 @@ import Anxiety from '../images/anxiety.png';
         <h2 class="section__title">Naturopatia</h2>
         <h4 class="section__subTitle">O que é e como pode ajudar</h4>
         <div class="content">
-            <p>A característica principal da Naturopatia, é uma abordagem holística e natural que tem como base o princípio da homeostasia, isto é, o corpo possuí uma capacidade inata de auto-equilíbrio.</p>
-            <p>O Naturopata avalia o estado geral da saúde das pessoas através de processos naturais e utilizando várias técnicas de diagnóstico específicas.</p>
-            <p>A Naturopatia inclui as áreas da Homeopatia, Fitoterapia, Redução Alimentar, Hidroterapia e Oligoterapia.</p>
+            <div class="content__txt">
+                <p>A característica principal da Naturopatia, é uma abordagem holística e natural que tem como base o princípio da homeostasia, isto é, o corpo possuí uma capacidade inata de auto-equilíbrio.</p>
+                <p>O Naturopata avalia o estado geral da saúde das pessoas através de processos naturais e utilizando várias técnicas de diagnóstico específicas.</p>
+                <p>A Naturopatia inclui as áreas da Homeopatia, Fitoterapia, Redução Alimentar, Hidroterapia e Oligoterapia.</p>
+            </div>
+            <a href="/naturopatia" class="btn btn--main content__cta">Saiba mais</a>
         </div>
+
         <ul class="conditions">
             <li class="condition">
                 <div class="condition__header">
@@ -28,7 +32,9 @@ import Anxiety from '../images/anxiety.png';
                     </div>
                 </div>
                 <div class="condition__body">
-                    <div class="condition__title"> Insónia </div>
+                    <h4 class="condition__title"> Insónia </h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus dolorum, ex exercitationem at aspernatur delectus modi est.</p>
+                    <a class="more">Saber mais</a> 
                 </div>
             </li>
             <li class="condition">
@@ -38,7 +44,9 @@ import Anxiety from '../images/anxiety.png';
                     </div>
                 </div>
                 <div class="condition__body">
-                    <div class="condition__title"> Alergias </div>
+                    <h4 class="condition__title"> Alergias </h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus dolorum, ex exercitationem at aspernatur delectus modi est.</p>
+                    <a class="more">Saber mais</a> 
                 </div>
             </li>
             <li class="condition">
@@ -48,7 +56,9 @@ import Anxiety from '../images/anxiety.png';
                     </div>
                 </div>
                 <div class="condition__body">
-                    <div class="condition__title"> Obesidade </div>
+                    <h4 class="condition__title"> Obesidade </h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus dolorum, ex exercitationem at aspernatur delectus modi est.</p>
+                    <a class="more">Saber mais</a> 
                 </div>
             </li>
             <li class="condition">
@@ -58,7 +68,9 @@ import Anxiety from '../images/anxiety.png';
                     </div>
                 </div>
                 <div class="condition__body">
-                    <div class="condition__title"> Fadiga crónica </div>
+                    <h4 class="condition__title"> Stress e Fadiga crónica </h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus dolorum, ex exercitationem at aspernatur delectus modi est.</p>
+                    <a class="more">Saber mais</a> 
                 </div>
             </li>
             <li class="condition">
@@ -68,7 +80,9 @@ import Anxiety from '../images/anxiety.png';
                     </div>
                 </div>
                 <div class="condition__body">
-                    <div class="condition__title"> Ansiedade </div>
+                    <h4 class="condition__title"> Ansiedade </h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus dolorum, ex exercitationem at aspernatur delectus modi est.</p>
+                    <a class="more">Saber mais</a> 
                 </div>
             </li>
             <li class="condition">
@@ -78,7 +92,9 @@ import Anxiety from '../images/anxiety.png';
                     </div>
                 </div>
                 <div class="condition__body">
-                    <div class="condition__title"> Dores reumáticas </div>
+                    <h4 class="condition__title"> Dores reumáticas </h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus dolorum, ex exercitationem at aspernatur delectus modi est.</p>
+                    <a class="more">Saber mais</a> 
                 </div>
             </li>
             <li class="condition">
@@ -88,17 +104,9 @@ import Anxiety from '../images/anxiety.png';
                     </div>
                 </div>
                 <div class="condition__body">
-                    <div class="condition__title"> Problemas de memória </div>
-                </div>
-            </li>
-            <li class="condition">
-                <div class="condition__header">
-                    <div class="condition__icon">
-                        <Image src={ Stress } alt="" width="60" height="60"/>
-                    </div>
-                </div>
-                <div class="condition__body">
-                    <div class="condition__title"> Stress </div>
+                    <h4 class="condition__title"> Problemas de memória </h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus dolorum, ex exercitationem at aspernatur delectus modi est.</p>
+                    <a class="more">Saber mais</a> 
                 </div>
             </li>
 
@@ -109,7 +117,9 @@ import Anxiety from '../images/anxiety.png';
                     </div>
                 </div>
                 <div class="condition__body">
-                    <div class="condition__title"> Colesterol </div>
+                    <h4 class="condition__title"> Colesterol </h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus dolorum, ex exercitationem at aspernatur delectus modi est.</p>
+                    <a class="more">Saber mais</a> 
                 </div>
             </li>
         </ul>
@@ -121,56 +131,82 @@ import Anxiety from '../images/anxiety.png';
 <style lang="less">
 
     .section--health {
-        background-color: var(--secondary-color);
-        text-align: center;
+        background-color: var(--secondary);
         position: relative;
+        text-align: center;
+    }
+
+
+    .content {
+        display: flex;
+        gap: 12rem;
+    }
+
+    .content__txt {
+        flex-grow: 1;
+
+        p:last-child {
+            margin-block-end: 0;
+        }
+    }
+
+    .content__cta {
+        align-self: end;
+        flex-shrink: 0;
     }
 
     .conditions {
+        --size: 280px;
+
         display: grid;
         gap: 1.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(var(--size), 1fr));
         margin-block-start: 6rem;
         z-index: 10;
     }
 
     .condition {
-        background-color: var(--card-bg);
+        background-color: var(--accent-faded);
         border-radius: var(--default-border-radius);
-        box-shadow: 0 1px 8px 1px rgba(0, 0, 0, .2);
-        padding: 1.5rem;
-    }
-
-    .condition__header,
-    .condition__body {
-        align-items: center;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        height: calc(var(--size) * 1.1);
+        padding: 1.5rem;
     }
     
     .condition__icon {
-        align-items: center;
+        --size: 70px;
+
         background-color: var(--font-color);
-        border-radius: 50%;
+        border-radius: var(--default-border-radius);
         display: flex;
-        height: 120px;
+        height: var(--size);
         justify-content: center;
-        width: 120px;
+        padding: 15px;
+        width: var(--size);
 
         img {
             filter: invert(100);
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
         }
     }
 
     .condition__body {
+        flex-grow: 1;
         font-size: 1.3rem;
-        font-weight: 700;
-        margin-block-start: 2rem;
-        text-transform: uppercase;
+        margin-block-start:.75rem;
+
+        p {
+            font-size: .9rem;
+            opacity: .7;
+        }
     }
 
     .condition__title {
-        text-align: center;
+        font-size: 1.6rem;
+        margin-block-end: .75rem;
     }
 
 
