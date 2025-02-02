@@ -15,7 +15,8 @@
     "@iconify-json/mdi": "^1.1.66",
     "astro": "^4.9.2",
     "astro-icon": "^1.1.0",
-    "contentful": "^10.11.7"
+    "contentful": "^10.11.7",
+    "dotenv": "^16.4.7"
   },
   "devDependencies": {
     "less": "^4.2.0"

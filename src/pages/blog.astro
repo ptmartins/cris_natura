@@ -11,7 +11,7 @@ const blogPosts = await fetchEntries();
         <div class="innerWrapper">
             <h1 class="blog__title">Blog</h1>
             <ul class="posts">
-                {blogPosts.map((post) => (
+                {blogPosts.map(post => (
                   <li key={ post.sys.id } class="post">
                     <div class="post__thumb">
                       <Image src={`https:${ post.fields.poster?.fields?.file?.url }`} alt="deded" width="300" height="180" class="thumb__image"/>

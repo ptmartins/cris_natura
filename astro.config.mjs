@@ -1,8 +1,10 @@
 import { defineConfig } from 'astro/config';
-
+import dotenv from "dotenv";
+import 'dotenv/config';
 import icon from "astro-icon";
 
-// https://astro.build/config
+dotenv.config();
+
 export default defineConfig({
   integrations: [icon()]
 });
